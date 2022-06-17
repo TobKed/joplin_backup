@@ -1,15 +1,18 @@
 #!/bin/bash
 # https://discourse.joplinapp.org/t/best-method-to-backup-notes/1135/2
 
+# ${HOME}/code/joplin_backup/scripts/joplin_bak.sh
 # 0 8 * * * /Users/tobiaszkedzierski/code/joplin_backup/scripts/joplin_bak.sh >> /var/log/joplin_bak.log 2>&1
 
-set -euxo -pipefail
+set -euxo 
 
-BACKUP_DIR="$( dirname "${BASH_SOURCE[0]}" )/../backups/"
+
+SCRIPT_DIR=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
+BACKUP_DIR="${SCRIPT_DIR}/../backups/"
 JOPLIN_BIN="/usr/local/bin/joplin"
 
 $JOPLIN_BIN sync
-$JOPLIN_BIN e2ee decrypt
+# $JOPLIN_BIN e2ee decrypt
 
 cd "$BACKUP_DIR"
 rm -f *.md
