@@ -2,7 +2,7 @@
 # https://discourse.joplinapp.org/t/best-method-to-backup-notes/1135/2
 
 # ${HOME}/code/joplin_backup/scripts/joplin_bak.sh
-# 0 8 * * * /Users/tobiaszkedzierski/code/joplin_backup/scripts/joplin_bak.sh >> /var/log/joplin_bak.log 2>&1
+# 0 * * * * /Users/tobiaszkedzierski/code/joplin_backup/scripts/joplin_bak.sh >> /var/log/joplin_bak.log 2>&1
 
 set -euxo 
 
