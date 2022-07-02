@@ -4,8 +4,8 @@
 # ${HOME}/code/joplin_backup/scripts/joplin_bak.sh
 # 0 * * * * /Users/tobiaszkedzierski/code/joplin_backup/scripts/joplin_bak.sh >> /var/log/joplin_bak.log 2>&1
 
-set -euxo 
-
+set -euo pipefail
+set -x
 
 SCRIPT_DIR=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
 BACKUP_DIR="${SCRIPT_DIR}/../backups/"
